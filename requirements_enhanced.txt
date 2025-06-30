@@ -1,0 +1,289 @@
+# Enhanced Intelligent Store Migration Assistant - Production Requirements
+# Following best practices for enterprise-grade applications
+
+# ================================
+# Core Framework & API
+# ================================
+fastapi==0.104.1                 # High-performance web framework
+uvicorn[standard]==0.24.0         # ASGI server with performance optimizations
+gunicorn==21.2.0                  # WSGI HTTP Server for production
+
+# ================================
+# LangGraph & AI/ML Stack
+# ================================
+langgraph==0.0.20                 # Workflow orchestration framework
+langchain==0.0.340                # LangChain framework for AI agents
+langchain-openai==0.0.2           # OpenAI integration for LangChain
+langchain-community==0.0.10       # Community integrations
+openai==1.3.5                     # OpenAI API client
+anthropic==0.7.8                  # Claude API client (fallback)
+tiktoken==0.5.1                   # Tokenizer for OpenAI models
+
+# ================================
+# Data Validation & Serialization
+# ================================
+pydantic==2.5.0                   # Data validation and settings management
+pydantic-settings==2.1.0          # Environment-based settings
+email-validator==2.1.0            # Email validation for Pydantic
+phonenumbers==8.13.26             # Phone number validation
+
+# ================================
+# Database & ORM
+# ================================
+sqlalchemy==2.0.23                # SQL toolkit and ORM
+asyncpg==0.29.0                   # Async PostgreSQL driver
+alembic==1.12.1                   # Database migration tool
+psycopg2-binary==2.9.9            # PostgreSQL adapter (sync fallback)
+
+# ================================
+# Caching & Message Queue
+# ================================
+redis==5.0.1                      # Redis client
+aioredis==2.0.1                   # Async Redis client
+celery==5.3.4                     # Distributed task queue
+kombu==5.3.4                      # Message transport abstraction
+
+# ================================
+# Authentication & Security
+# ================================
+python-jose[cryptography]==3.3.0  # JWT token handling
+python-multipart==0.0.6           # Form data parsing
+passlib[bcrypt]==1.7.4             # Password hashing
+cryptography==41.0.7              # Cryptographic recipes and primitives
+python-decouple==3.8              # Environment variable parsing
+
+# ================================
+# HTTP Client & API Integration
+# ================================
+httpx==0.25.2                     # Async HTTP client
+aiohttp==3.9.1                    # Alternative async HTTP client
+requests==2.31.0                  # Sync HTTP client (legacy support)
+urllib3==2.1.0                    # HTTP library with connection pooling
+
+# ================================
+# Configuration & Environment
+# ================================
+python-dotenv==1.0.0              # Environment variable loading
+dynaconf==3.2.4                   # Configuration management
+click==8.1.7                      # Command line interface creation
+
+# ================================
+# Logging & Monitoring
+# ================================
+structlog==23.2.0                 # Structured logging
+prometheus-client==0.19.0         # Prometheus metrics client
+sentry-sdk[fastapi]==1.38.0       # Error tracking and performance monitoring
+opentelemetry-api==1.21.0         # Distributed tracing API
+opentelemetry-sdk==1.21.0         # Distributed tracing SDK
+opentelemetry-instrumentation-fastapi==0.42b0  # FastAPI auto-instrumentation
+
+# ================================
+# Data Processing & Utilities
+# ================================
+pandas==2.1.4                     # Data manipulation and analysis
+numpy==1.25.2                     # Numerical computing
+openpyxl==3.1.2                   # Excel file handling
+xmltodict==0.13.0                 # XML to dictionary conversion
+python-dateutil==2.8.2            # Date/time utilities
+pytz==2023.3                      # Timezone handling
+
+# ================================
+# File Processing & Storage
+# ================================
+pillow==10.1.0                    # Image processing
+boto3==1.34.0                     # AWS SDK for Python
+google-cloud-storage==2.10.0      # Google Cloud Storage
+azure-storage-blob==12.19.0       # Azure Blob Storage
+
+# ================================
+# Network & Graph Processing
+# ================================
+networkx==3.2.1                   # Graph analysis for LangGraph
+matplotlib==3.8.2                 # Plotting and visualization
+graphviz==0.20.1                  # Graph visualization
+
+# ================================
+# Testing Framework
+# ================================
+pytest==7.4.3                     # Testing framework
+pytest-asyncio==0.21.1            # Async testing support
+pytest-cov==4.1.0                 # Coverage reporting
+pytest-mock==3.12.0               # Mocking utilities
+pytest-benchmark==4.0.0           # Performance benchmarking
+hypothesis==6.88.4                # Property-based testing
+factory-boy==3.3.0                # Test data generation
+freezegun==1.2.2                  # Time mocking for tests
+
+# ================================
+# Code Quality & Linting
+# ================================
+black==23.11.0                    # Code formatting
+isort==5.12.0                     # Import sorting
+flake8==6.1.0                     # Linting
+mypy==1.7.1                       # Static type checking
+bandit==1.7.5                     # Security linting
+safety==2.3.5                     # Dependency vulnerability checking
+pre-commit==3.6.0                 # Git hooks for code quality
+
+# ================================
+# Documentation
+# ================================
+mkdocs==1.5.3                     # Documentation generator
+mkdocs-material==9.4.8            # Material theme for MkDocs
+sphinx==7.2.6                     # Documentation generation
+sphinx-rtd-theme==1.3.0           # ReadTheDocs theme
+
+# ================================
+# Performance & Profiling
+# ================================
+py-spy==0.3.14                    # Profiling tool
+memory-profiler==0.61.0           # Memory usage profiling
+psutil==5.9.6                     # System and process utilities
+line-profiler==4.1.1              # Line-by-line profiling
+
+# ================================
+# Task Scheduling & Background Jobs
+# ================================
+apscheduler==3.10.4               # Advanced Python Scheduler
+rq==1.15.1                        # Simple job queues for Python
+dramatiq==1.14.2                  # Background task processing
+
+# ================================
+# Email & Notifications
+# ================================
+fastapi-mail==1.4.1               # Email sending
+twilio==8.10.3                    # SMS notifications
+slack-sdk==3.26.1                 # Slack notifications
+
+# ================================
+# Serialization & Data Formats
+# ================================
+orjson==3.9.10                    # Fast JSON serialization
+msgpack==1.0.7                    # Binary serialization
+yaml==0.2.5                       # YAML parsing
+toml==0.10.2                      # TOML parsing
+
+# ================================
+# Validation & Schema
+# ================================
+jsonschema==4.20.0                # JSON Schema validation
+marshmallow==3.20.1               # Object serialization/deserialization
+cerberus==1.3.5                   # Schema validation
+
+# ================================
+# Internationalization
+# ================================
+babel==2.13.1                     # Internationalization utilities
+python-babel==2.13.1              # Python Babel integration
+
+# ================================
+# Development & Debugging
+# ================================
+rich==13.7.0                      # Rich text and beautiful formatting
+icecream==2.1.3                   # Debugging made easier
+ipython==8.17.2                   # Enhanced interactive Python shell
+jupyter==1.0.0                    # Jupyter notebook support
+
+# ================================
+# Platform-Specific E-commerce APIs
+# ================================
+shopify-python-api==12.0.0        # Shopify API integration
+woocommerce==3.0.0                # WooCommerce API integration
+bigcommerce==1.23.0               # BigCommerce API integration
+
+# ================================
+# Web Scraping & Data Extraction
+# ================================
+beautifulsoup4==4.12.2            # HTML/XML parsing
+scrapy==2.11.0                    # Web scraping framework
+selenium==4.15.2                  # Browser automation
+playwright==1.40.0                # Modern browser automation
+
+# ================================
+# Machine Learning & AI (Optional)
+# ================================
+scikit-learn==1.3.2               # Machine learning library
+transformers==4.36.2              # Hugging Face transformers
+torch==2.1.1                      # PyTorch for deep learning
+tensorflow==2.15.0                # TensorFlow (alternative to PyTorch)
+
+# ================================
+# Geolocation & Maps
+# ================================
+geopy==2.4.1                      # Geocoding and distance calculation
+folium==0.15.1                    # Map visualization
+
+# ================================
+# Financial & Payment Processing
+# ================================
+stripe==7.7.0                     # Stripe payment processing
+paypal-python-sdk==1.14.0         # PayPal integration
+
+# ================================
+# Image & Media Processing
+# ================================
+opencv-python==4.8.1.78           # Computer vision library
+imageio==2.33.1                   # Image I/O operations
+ffmpeg-python==0.2.0              # Video processing
+
+# ================================
+# Compliance & Privacy
+# ================================
+python-gdpr==1.0.0                # GDPR compliance utilities
+cryptography==41.0.7              # Encryption for privacy
+
+# ================================
+# API Rate Limiting & Throttling
+# ================================
+slowapi==0.1.9                    # Rate limiting for FastAPI
+aiolimiter==1.1.0                 # Async rate limiting
+
+# ================================
+# Workflow & State Management
+# ================================
+transitions==0.9.0                # State machine implementation
+python-statemachine==2.1.2        # Alternative state machine
+
+# ================================
+# XML & HTML Processing
+# ================================
+lxml==4.9.3                       # XML and HTML processing
+html5lib==1.1                     # HTML parser
+
+# ================================
+# Timezone & Calendar
+# ================================
+icalendar==5.0.11                 # iCalendar support
+croniter==2.0.1                   # Cron expression parsing
+
+# ================================
+# Health Checks & Monitoring
+# ================================
+healthcheck==1.3.3                # Health check endpoint
+watchdog==3.0.0                   # File system monitoring
+
+# ================================
+# Development Tools
+# ================================
+python-dotenv==1.0.0              # Environment variables
+cookiecutter==2.5.0               # Project templating
+invoke==2.2.0                     # Task execution
+
+# ================================
+# Production Server & Deployment
+# ================================
+supervisor==4.2.5                 # Process control system
+systemd-python==235                # Systemd integration
+
+# ================================
+# Backup & Data Export
+# ================================
+python-backup==0.1.0              # Backup utilities
+xlsxwriter==3.1.9                 # Excel file creation
+reportlab==4.0.7                  # PDF generation
+
+# ================================
+# Version Constraints for Security
+# ================================
+# Ensure all dependencies are pinned to specific versions
+# to avoid security vulnerabilities and ensure reproducible builds
