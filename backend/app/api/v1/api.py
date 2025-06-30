@@ -4,15 +4,13 @@ Main API router for v1
 
 from fastapi import APIRouter
 
-# Import routers when they're created
-# from app.api.v1.endpoints import migrations, agents, platforms
+# Import routers
+from app.api.v1.endpoints import migrations
 
 api_router = APIRouter()
 
-# Include routers when ready
-# api_router.include_router(migrations.router, prefix="/migrations", tags=["migrations"])
-# api_router.include_router(agents.router, prefix="/agents", tags=["agents"])
-# api_router.include_router(platforms.router, prefix="/platforms", tags=["platforms"])
+# Include routers
+api_router.include_router(migrations.router, prefix="/migrations", tags=["migrations"])
 
 @api_router.get("/")
 async def root():
@@ -20,5 +18,10 @@ async def root():
     return {
         "message": "Intelligent Store Migration Assistant API v1",
         "version": "1.0.0",
-        "status": "active"
+        "status": "active",
+        "available_endpoints": [
+            "/migrations - LangGraph multi-agent migration workflows",
+            "/docs - Interactive API documentation",
+            "/redoc - Alternative API documentation"
+        ]
     }
