@@ -507,7 +507,8 @@ async def demonstrate_langgraph_workflow():
         print("📋 Migration Plan:")
         print(f"   Estimated Duration: {plan['migration_plan']['estimated_duration_days']} days")
         print(f"   Effort Required: {plan['migration_plan']['estimated_effort_hours']} hours")
-        print(f"   Team Size: {sum(plan['resource_requirements'].values())} people")
+        resource_values = [v for v in plan['resource_requirements'].values() if isinstance(v, (int, float))]
+        print(f"   Team Size: {sum(resource_values)} people")
         print(f"   Phases: {len(plan['phases'])} phases")
         print()
     
